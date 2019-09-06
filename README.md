@@ -1,2 +1,11 @@
 # 42-WildCard-PythonML
-Wildcard Project for 42. My focus is learning Python and TensorFlow for Machine Learning. The following project should have a UI and guess handwritten Alphanumeric chars via a Neural Network.
+The following is pratice code for my endevors into Python and Machine learning.
+
+## Installation
+[Anaconda3](https://www.anaconda.com/distribution/)
+Python 3.6
+TensorFlow (for Python 3.6)
+
+### What is Wildcard?
+
+Wildcard is a project that allows you you work on whatever you'd like and gain XP within 42.
