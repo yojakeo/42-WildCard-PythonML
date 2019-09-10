@@ -1,0 +1,202 @@
+Machine learning libs:
+Pandas, methods of reading data sets.
+Numpy, adds data value types, such as arrays (lists and arrays are not the same).
+Sklearn, pre-made ML methods backed off of TensorFlow
+TensorFlow, lib of ML python functions and methods. 
+
+File formats
+===============
+csv = comma separated values
+
+Python GUI with Tkinter
+============================
+Tkinter is a library of functions and methods for creating GUIs. Creating an instance sets a var such as "window" from tk.Tk() to create a blank instance.
+
+Widgets are what each button, label and image imported into the window and displayed are called. They are declared as tk.Thewidgetfucntion(window, then the config). and packed with .pack()
+They can also be declared within a variable and be packed later.
+
+Frame widgets is a container to contain other widgets. It's best to place with the .place method.
+
+The diffrent placement methods for getting a widget onto the screen is
+.Pack(Expand, Fill, Side)
+.Place(anchor, border, height&width and rel. x&y and rel)
+.Grid(Row & Column, padding, ...)
+
+Pack: Simple but hard to get it to do anything advanced.
+Place: Gives lots of control in where and how widgets are placed. But it takes more tweaking and lots of knowledge of the documentation.
+Grid: Great for Grid format and stacking. Hard to be dynamic however.
+
+General Python Notes
+==========================
+
+
+
+Tech with Tim ML notes
+============================
+Creating a Conda environment
+++++++++++++++++++++++++++++++++
+Conda create -n (Name of environment) python=3.6
+Conda activate (Env)
+pip install tensorflow, keras, pandas, numpy, Image
+
+#1/2:
+Pandas outputs a Pandas Data Frame.
+test_size is a defined value that is a ratio of how much of the data should be taken to train the model.
+model_selection.train_test_split outputs 4 arrays, 2 training values (a sub section of the data provided.) and the full array of the data passed for testing.
+
+
+#3:
+Linear Regression:
+	Based off of a line of best fit from a scatter graph of given data. Not good for data with lots of variation.
+
+to use linear regression with sklearn. set a val to the model (val = linear_model.LinearRegression()), use val.fit(train arrays). accuracy can be tested with val.score(test arrays) (returns a present in double)
+
+We can predict with the .predict(test arr) method. predictions are returned.
+
+#4:
+Pickle is a method of saving models from programs to be called in later. So we don't keep retraining over and over again. This also lets us keep our best models.
+#5:
+Sklearn has preprocessing that we can use to reformat our data sets into numerical values for use in our ML algorithm. eg: .fit_transform(1D arr)
+#6/7:
+K Nearest Neighbors (KNN) (Class):
+	Classification based. Looks for groupings of data points. K = Amount of neighbors to look for. eg RGB points and K is 3. It will look for the 3 closest data points and test what they are classed as. Setting the selected data point as the majority class. K should never be even, always odd. Claudian Distance is the absolute distance between nodes. K nearest uses this as default.
+	Limits: Saving the model is fairly useless, very computational.
+
+#8/9/10:
+Support Vector Machine (SVM) (Class):
+	Creates a Hyper Plane. The mid line between two different points of a differing class. Where two nodes are the same distance away from the line on the opposing sides. Try to maximize the margin to help with accuracy. Classes data on what side of the plane it is on. Kernels are a function of separating conjoined data classes that would make it really hard to make a hyper plane otherwise, creating a 3d object from a 2d object. instead of a line it'd be like a sheet in 3d space. Adding more dimensions till the data is usable if it still is impossible to make a hyper plane.
+
+	Soft margins allows some nodes not within the class to exist within the margin.
+
+	Adding the kernels is essential to having good accuracy in the results.
+#11:
+K-means clustering (Unsupervised class):
+	K = How many clusters. Uses "centroids" (Here's how they work), Randomly places down centroids and finds a margin between different centroids and the surrounding nodes. Nodes are set to the class of the closest centroid. Afterwards the centroid is moved to the center point of the nodes via the mean of the points in the class. Rinse and repeat, reassign nodes to the correct side of the new margin. Repeats until there are no more changes in the class of any node.
+
+==================================================
+Python Neural Networks. Tech With Tim TF2.0
+
+How Neural Networks Work:
+	Works a lot like the Brain where you have Neurons that are wried in a cretin way. Firing and not firing. Binary. Neural Networks have multiple different ways to be configured. Most cases are a "Fully Connected Network". Each connection has a cretin weight with a bias that may or may not fire.
+
+	First step is to define our input and output of our network.
+
+How to train a neural net:
+	Lots and lots of data. With trial and error, just like humans. Adjusting the weights and bias of the neural net to fine tune the output of the network. Utilizing a loss function the tester can tell the network how wrong it is as to prevent providing too much offset on the network and sabotaging itself with other inputs.
+
+Notes on TensorFlow in general:
+===================================
+The Core
++++++++++++++
+The core concept of TensorFlow is the tensor, a data structure similar to an array or list. initialized, manipulated as they are passed through the graph, and updated through the learning process.
+
+Logits
++++++++
+Calculated vector for defining prediction class. Often use in the last layer of a neural network.
+In ML it is used to plot a domain between -1 and 1 for the prediction values in networks.
+
+===========================================
+Notes from  Digit Recognition Project:
+
+There are two types of Neural Nets. Shallow and Deep. Shallow is commonly is just one "hidden" layer of nodes. While Deep is multiple layers of nodes. Allowing much more complexity but also requiring more data and time to train the model. It also seems that it's best to have the hidden layer in powers of 2 to fit binary computing for optimization.
+
+Input layer should contain as many nodes as the amount of inputs your giving. Such as the 28x28 picture of a number for this project, 784 nodes. 1 node for each pixel containing an gray scale value. Same goes for the Output layer.
+
+Over-fitting is another term for over-training. Where the computer essentially memorizes the patterns and when given new values will be inaccurate. Shallow nets are often subjects to it while Deep nets tend to not be as much.
+
+Vars for Neural Network Initialization in TensorFlow
+================================================
+Data
+++++++++++
+training array of data (Should be the biggest).
+validation array of data.
+testing arrays of array.
+Input data should already converted and correctly formated before passing to the network.
+
+Nodes
+++++++++++
+Node count for input layer
+separate node counts for each hidden layer for the network.
+Node count for the output layer, Should match the amount of outputs the program should produce.
+
+Network Parameters
+++++++++++++++++++
+A Learning rate var containing a notation of the rate. such as 1e-4. This is how much the network will adjust bias and weights of node connections.
+The number of iterations the network should do to train itself.
+A batch size of how many children of the network will run during training for the evolution of the Network.
+Dropout rate is the chance that a unit will drop out.
+
+Network Placeholders
+++++++++++++++++++++++++++++
+Place holder value from TensorFlow with the size of the data input to be fed in. Creating a shape the same size as the amount of input nodes in the input layers. With another value with the size of the output node count instead for the output layer.
+
+Node Connection
++++++++++++++++++++++++
+The Nodes are dynamic and will change as the model is trained. Essentially it's where the Network will do it's learning. 
+
+The initial values of these place-holders have a large amount of dictation of the final accuracy of the model. It's best if the values are random and close to 0. They are used in the activation function of the nodes representing the strength between the different connections.
+
+These values are farther modified during the network optimization as it does small tinkers of the the different weights and biases of the connections of nodes.
+
+Weights are declared for each connection to different layers within the network. This is also where the connections are directly established and defined. Such as having layers connect to layers ahead of it instead of it being a full network where every node is connected to every other node front and back.
+with declaration, the two layers that you wish to connect are referenced and a standard deviation of the weights is defined to allow the network to learn with every cycle. 
+    'Var': tf.Variable(tf.truncated_normal([Layer1, Layer2], stddev=0.1))
+
+Bias is a small constant value to ensure the tensors activate in the initial stages.
+
+Bias are declared with a small number and a defined layer.
+    'Var': tf.Variable(tf.constant(0.1, shape=[Layer]))
+
+Layer Definition
++++++++++++++++++++
+These variables define the operations that manipulate the tensors in the Network.
+Each hidden layer executes a matrix of multiplications on the data being fed through from the previous layer. One multiplication for connection based off of Bias and Weight.
+	Var = tf.add(tf.matmul(Input Layer, weights['Weight Var']), biases['Bias Var'])
+
+Layer dropout is another definition used in the Network. Often used at the last hidden layer right before the output layer.
+	layer_drop = tf.nn.dropout(Input layer, Ratio)
+
+Optimization
++++++++++++++++++
+The last step before the network is finished and ready for training and being fed data is to define the methods of optimization. A common way is called Gradient Descent Optimization, a few of these algorithms are ingrained into TensorFlow.
+	cross_entropy = tf.reduce_mean(
+    	tf.nn.softmax_cross_entropy_with_logits(
+        	labels=Y, logits=output_layer))
+	train_step = tf.train.AdamOptimizer(1e-4).minimize(cross_entropy)
+
+Training
++++++++++++++++
+The point of training is to improve the loss function. or to decrease as much as possible the difference between the training data and the prediction we ask it from our testing data set.
+
+tf.equal creates a table of booleans to compare if predicted values are true or false. The accuracy can be calculated with this via Mean.
+	correct_pred = tf.equal(tf.argmax(output_layer, 1), tf.argmax(Y, 1))
+	accuracy = tf.reduce_mean(tf.cast(correct_pred, tf.float32))
+
+Initialization
++++++++++++++++
+The Following code can be used to activate the network.
+	init = tf.global_variables_initializer()
+	sess = tf.Session()
+	sess.run(init)
+
+
+This code is a sample on how to loop the network for training using batches and printing the accuracy if a network as it trains.
+	# train on mini batches
+	for i in range(n_iterations):
+	    batch_x, batch_y = mnist.train.next_batch(batch_size)
+    	sess.run(train_step, feed_dict={
+        	X: batch_x, Y: batch_y, keep_prob: dropout
+     	   })
+
+    # print loss and accuracy (per minibatch)
+	   	if i % 100 == 0:
+    	    minibatch_loss, minibatch_accuracy = sess.run(
+        	    [cross_entropy, accuracy],
+	            feed_dict={X: batch_x, Y: batch_y, keep_prob: 1.0}
+    	        )
+        	print("Iteration", str(i),
+        	    "\t| Loss =", str(minibatch_loss),
+	            "\t| Accuracy =", str(minibatch_accuracy))
+
+	test_accuracy = sess.run(accuracy, feed_dict={X: mnist.test.images, Y: mnist.test.labels, keep_prob: 1.0})
+	print("\nAccuracy on test set:", test_accuracy)
