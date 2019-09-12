@@ -8,8 +8,8 @@ Wildcard idealy should only be 50 hours of work for everything. Including Github
 
 ### What does this project do?
 This is a Machine Learning project (with TensorFlow) To teach myself how to use Tensor Flow and other aspects of Python.
-It takes in a 28X28 grayscale picture formated from CSV to figure out what it is.
-For say you gave it a 7. It should say that's a 7. Or a g would be a g. From a dataset of handwritten letters and numbers.
+It takes in a 28X28 grayscale picture formated from CSV to figure out what digit it is.
+It works between the values between 0 and 9. Very simple and has no way of splicing up any number more than 2 digits.
 This project also a simple GUI that displays the selected image with the output and accuracy of the model.
 
 ## Installation
@@ -23,8 +23,10 @@ This project also a simple GUI that displays the selected image with the output 
 [Digit Recoginition](https://www.digitalocean.com/community/tutorials/how-to-build-a-neural-network-to-recognize-handwritten-digits-with-tensorflow), 
 [Machine Learning Tutorial](https://www.youtube.com/playlist?list=PLzMcBGfZo4-mP7qA9cagf68V06sko5otr), 
 [Tikinter Tutorial](https://youtu.be/D8-snVfekto)
-[Digit Dataset](http://yann.lecun.com/exdb/mnist/)
+[MNIST Dataset](http://yann.lecun.com/exdb/mnist/)
 
 #### Other Good Resources
 [How Machines Learn - CGP Grey](https://youtu.be/R9OHn5ZF4Uo)
 
+### Modifcation / Format
+For any modifcations. Use the PEP 8 Ptyhon formating guide.

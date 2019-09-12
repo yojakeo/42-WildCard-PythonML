@@ -1,6 +1,6 @@
 # Project Files
 */MNIST_data/*
-
+.idea/
 # Prerequisites
 *.d
 

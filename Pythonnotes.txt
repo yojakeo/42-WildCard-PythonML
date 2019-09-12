@@ -30,6 +30,14 @@ General Python Notes
 ==========================
 
 
+Neural Network Types
+=======================
+Convolutional
+++++++++++++++++
+Regularized Fully Connected NN
+Prone to overfitting
+
+
 
 Tech with Tim ML notes
 ============================
