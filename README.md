@@ -1,7 +1,7 @@
 # 42-WildCard-PythonML
 The following is pratice code for my endevors into Python and Machine learning.
 
-![GUI for the program](https://github.com/yojakeo/42-WildCard-PythonML/raw/master/wildcard.png)
+![GUI for the program](https://github.com/yojakeo/42-WildCard-PythonML/blob/master/Wildcard.png)
 
 ### What is Wildcard?
 
