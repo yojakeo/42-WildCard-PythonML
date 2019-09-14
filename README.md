@@ -22,8 +22,8 @@ This project also a simple GUI that displays the selected image with the output 
 5. run Python on main.py and watch!
 
 #### Sources
-* [Digit Recoginition](https://www.digitalocean.com/community/tutorials/how-to-build-a-neural-network-to-recognize-handwritten-digits-with-tensorflow), 
-* [Machine Learning Tutorial](https://www.youtube.com/playlist?list=PLzMcBGfZo4-mP7qA9cagf68V06sko5otr), 
+* [Digit Recoginition](https://www.digitalocean.com/community/tutorials/how-to-build-a-neural-network-to-recognize-handwritten-digits-with-tensorflow)
+* [Machine Learning Tutorial](https://www.youtube.com/playlist?list=PLzMcBGfZo4-mP7qA9cagf68V06sko5otr)
 * [Tikinter Tutorial](https://youtu.be/D8-snVfekto)
 * [MNIST Dataset](http://yann.lecun.com/exdb/mnist/)
 
